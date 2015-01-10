@@ -28,6 +28,7 @@ namespace Rock.Migrations
             AutomaticMigrationsEnabled = false;
             MigrationsNamespace = "Rock.Migrations";
             CodeGenerator = new RockCSharpMigrationCodeGenerator<Rock.Data.RockContext>();
+            SetSqlGenerator( "System.Data.SqlClient", new RockSqlServerMigrationSqlGenerator() );
             CommandTimeout = 300;
         }
 
